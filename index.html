@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,10 +32,6 @@ body {
   overflow-x: hidden;
 }
 
-
-/* =====================
-   OPENING
-===================== */
 
 #opening {
   position: fixed;
@@ -141,10 +137,6 @@ body {
 }
 
 
-/* =====================
-   MAIN
-===================== */
-
 #main {
   display: none;
 
@@ -157,10 +149,6 @@ body {
   opacity: 1;
 }
 
-
-/* =====================
-   HERO
-===================== */
 
 .hero {
   min-height: 100vh;
@@ -228,10 +216,6 @@ body {
 }
 
 
-/* =====================
-   LETTER
-===================== */
-
 .section {
   width: 90%;
   max-width: 720px;
@@ -282,11 +266,6 @@ body {
   margin-bottom: 15px;
 }
 
-
-/* =====================
-   REVEAL
-===================== */
-
 .reveal {
   text-align: center;
 
@@ -318,11 +297,6 @@ body {
 
   line-height: 1.1;
 }
-
-
-/* =====================
-   DATE BOX
-===================== */
 
 .date-box {
   text-align: center;
@@ -360,10 +334,6 @@ body {
   color: #a33f5b;
 }
 
-
-/* =====================
-   STORY
-===================== */
 
 .story-title {
   text-align: center;
@@ -427,11 +397,6 @@ body {
   color: #735761;
 }
 
-
-/* =====================
-   FINAL
-===================== */
-
 .final {
   min-height: 90vh;
 
@@ -488,11 +453,6 @@ body {
   color: #a74763;
 }
 
-
-/* =====================
-   MUSIC
-===================== */
-
 .music-btn {
   position: fixed;
 
@@ -520,10 +480,6 @@ body {
     0 8px 25px rgba(0,0,0,0.15);
 }
 
-
-/* =====================
-   FLOATING HEARTS
-===================== */
 
 .floating-heart {
   position: fixed;
@@ -563,11 +519,6 @@ body {
 
 }
 
-
-/* =====================
-   MOBILE
-===================== */
-
 @media (max-width: 600px) {
 
   .opening-title {
@@ -598,10 +549,6 @@ body {
 
 <body>
 
-
-<!-- =====================
-     OPENING SCREEN
-===================== -->
 
 <div id="opening">
 
@@ -634,10 +581,6 @@ body {
 
 </div>
 
-
-<!-- =====================
-     MAIN WEBSITE
-===================== -->
 
 <main id="main">
 
@@ -686,13 +629,9 @@ body {
 
       <p>
         hi baby, good morning po! hehehe. uhm, for this message, i just want to say that i love you so muchieee. thank you for everything, baby. alam ko naman kung gaano ka-grabe yung effort and time na binibigay mo sa'kin, and i really, really appreciate all of it.
-      </p>
-
-      <p>
+      
         i see how much effort you put into everything, and nakikita ko talaga na you're a genuinely good guy. that's also one of the reasons why nagustuhan din talaga kita.
-      </p>
-
-      <p>
+    
         since hindi natuloy yung date natin today because of the heavy rainfall, siguro dito ko na lang sasabihin since i promised you na saturday ko sasabihin.
       </p>
 
@@ -777,17 +716,11 @@ body {
 
       <p>
         opo, sinasagot na kita, ben. promises, promises, totoo po. hehehe. wag ka magalit na dito ko sinabi pleaseee. i really wanted to tell you personally, pero since hindi natuloy yung date natin, dito ko na lang muna sinabi.
-      </p>
-
-      <p>
+      
         and you know what i love most about you, baby? kase honestly, ang dami e HAHAHAHAHA. pero siguro pinaka gusto ko sa'yo is how genuine you are. like, nakikita ko talaga yung effort mo sa akin without me even having to ask for it, and i really appreciate that so much.
-      </p>
-
-      <p>
+    
         i love how patient you are with me kahit ang kulit ko minsan and kahit intentionally talaga kitang inaaway HAHAHAHAHAHA. gusto ko lang din kasi makita kung hanggang saan ka aabot and kung gaano ka talaga kaseryoso sa'kin.
-      </p>
-
-      <p>
+      
         i also love how you make me feel na i'm actually cared for and appreciated. yung feeling na i don't have to question if you really like me or if you're serious about me, kase you always show it naman.
       </p>
 
@@ -798,7 +731,6 @@ body {
 </section>
 
 
-<!-- STORY -->
 
 <section class="section">
 
@@ -882,8 +814,6 @@ body {
 </section>
 
 
-<!-- FINAL -->
-
 <section class="final">
 
   <div>
@@ -920,10 +850,6 @@ i love you so muchieee, ben.
 </main>
 
 
-<!-- =====================
-     MUSIC
-===================== -->
-
 <audio id="music" loop>
 
   <source
@@ -945,9 +871,6 @@ i love you so muchieee, ben.
 
 <script>
 
-/* =====================
-   OPEN LETTER
-===================== */
 
 function openLetter() {
 
@@ -976,8 +899,6 @@ function openLetter() {
     }, 50);
 
 
-    /* START MUSIC */
-
     music.volume = 0.35;
 
     music.play().catch(function() {
@@ -992,10 +913,6 @@ function openLetter() {
 
 }
 
-
-/* =====================
-   MUSIC
-===================== */
 
 function toggleMusic() {
 
@@ -1022,10 +939,6 @@ function toggleMusic() {
 
 }
 
-
-/* =====================
-   FLOATING HEARTS
-===================== */
 
 function createHeart() {
 
