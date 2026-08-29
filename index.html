@@ -1,552 +1,1067 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>for ben ♡</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>For Ben ♡</title>
 
-    body {
-      min-height: 100 vh;
-      font-family: "Poppins", Arial, sans-serif;
-      background: linear-gradient (135 deg, #ffe6ed, #fff5f7, #ffd8e2);
-      color: #4a2932;
-      overflow-x: hidden;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    .screen {
-      min-height: 100 vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 25 px;
-    }
+body {
+  font-family: Arial, sans-serif;
+  color: #5b3a42;
 
-    /* OPENING */
+  background:
+    linear-gradient(
+      rgba(255, 235, 241, 0.78),
+      rgba(255, 247, 249, 0.88)
+    ),
+    url("our-photo.jpg");
 
-    #opening {
-      text-align: center;
-      transition: 0.8s ease;
-    }
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 
-    .heart {
-      font-size: 75 px;
-      color: #d95b78;
-      animation: heartbeat 1.5 s infinite;
-      margin-bottom: 20 px;
-    }
+  overflow-x: hidden;
+}
 
-    @ keyframes heartbeat {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.15);
-      }
-    }
 
-    .opening-title {
-      font-family: Georgia, serif;
-      font-size: 42 px;
-      margin-bottom: 10 px;
-      color: #713545;
-    }
+/* =====================
+   OPENING
+===================== */
 
-    .opening-subtitle {
-      font-size: 14 px;
-      opacity: 0.7;
-      margin-bottom: 30 px;
-    }
+#opening {
+  position: fixed;
+  inset: 0;
 
-    button {
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    .open-btn {
-      background: #b94767;
-      color: white;
-      padding: 14 px 30 px;
-      border-radius: 30 px;
-      font-size: 15 px;
-      box-shadow: 0 8 px 25 px rgba (185, 71, 103, 0.25);
-      transition: 0.3 s;
-    }
+  text-align: center;
 
-    .open-btn:hover {
-      transform: translateY (-3 px);
-      background: #9e3655;
-    }
+  background:
+    linear-gradient(
+      rgba(255, 239, 244, 0.97),
+      rgba(255, 220, 230, 0.97)
+    );
 
-    /* LETTER */
+  z-index: 9999;
 
-    #letter {
-      display: none;
-      width: 100 %;
-      max-width: 700 px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY (25 px);
-      transition: 1 s ease;
-    }
+  transition: opacity 1s ease;
+}
 
-    #letter.show {
-      opacity: 1;
-      transform: translateY (0);
-    }
+#opening.hide {
+  opacity: 0;
+  pointer-events: none;
+}
 
-    .card {
-      background: rgba (255, 255, 255, 0.82);
-      backdrop-filter: blur (12px);
-      border: 1px solid rgba(255,255,255,0.8);
-      border-radius: 25px;
-      padding: 35px 30px;
-      box-shadow: 0 20px 60px rgba(110, 45, 65, 0.15);
-    }
+.opening-content {
+  width: 90%;
+  max-width: 500px;
+}
 
-    .date {
-      text-align: center;
-      font-size: 12px;
-      letter-spacing: 3px;
-      color: #b94767;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-    }
+.heart {
+  font-size: 85px;
+  color: #b94d6b;
 
-    h1 {
-      text-align: center;
-      font-family: Georgia, serif;
-      font-size: 38px;
-      color: #713545;
-      margin-bottom: 30px;
-    }
+  animation: heartbeat 1.6s infinite;
 
-    .message {
-      line-height: 1.9;
-      font-size: 15px;
-      white-space: pre-line;
-    }
+  margin-bottom: 20px;
+}
 
-    .message p {
-      margin-bottom: 22px;
-    }
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
 
-    .highlight {
-      text-align: center;
-      font-family: Georgia, serif;
-      font-size: 30px;
-      color: #b94767;
-      margin: 35px 0;
-      line-height: 1.4;
-    }
+  50% {
+    transform: scale(1.12);
+  }
+}
 
-    .reveal {
-      background: #fff0f4;
-      border-radius: 18px;
-      padding: 25px;
-      text-align: center;
-      margin: 30px 0;
-      border: 1px solid #f7ccd7;
-    }
+.small-text {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 
-    .reveal small {
-      display: block;
-      color: #a45b6d;
-      margin-bottom: 10px;
-    }
+  color: #a46775;
 
-    .reveal strong {
-      font-family: Georgia, serif;
-      font-size: 28px;
-      color: #a83254;
-    }
+  margin-bottom: 18px;
+}
 
-    /* PHOTO */
+.opening-title {
+  font-family: Georgia, serif;
 
-    .photo-container {
-      margin: 30px 0;
-      text-align: center;
-    }
+  font-size: 48px;
 
-    .photo-container img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(90, 30, 50, 0.15);
-    }
+  color: #713b48;
 
-    .photo-caption {
-      margin-top: 10px;
-      font-size: 12px;
-      opacity: 0.6;
-    }
+  margin-bottom: 15px;
+}
 
-    /* END */
+.opening-subtitle {
+  font-size: 14px;
 
-    .ending {
-      text-align: center;
-      padding-top: 30px;
-    }
+  color: #8b6972;
 
-    .ending-text {
-      font-family: Georgia, serif;
-      font-size: 35px;
-      color: #a83254;
-      margin-bottom: 10px;
-    }
+  margin-bottom: 30px;
+}
 
-    .forever {
-      font-size: 13px;
-      opacity: 0.65;
-    }
+.open-btn {
+  border: none;
 
-    .music-btn {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: #b94767;
-      color: white;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-      z-index: 10;
-    }
+  padding: 15px 32px;
 
-    /* FLOATING HEARTS */
+  border-radius: 50px;
 
-    .floating-heart {
-      position: fixed;
-      bottom: -20px;
-      color: rgba(185, 71, 103, 0.35);
-      pointer-events: none;
-      animation: floatUp linear forwards;
-    }
+  background: #b94d6b;
 
-    @keyframes floatUp {
-      from {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-      }
+  color: white;
 
-      10% {
-        opacity: 1;
-      }
+  font-size: 14px;
 
-      to {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
+  cursor: pointer;
 
-    @media (max-width: 600px) {
-      .opening-title {
-        font-size: 34px;
-      }
+  box-shadow:
+    0 10px 30px rgba(185, 77, 107, 0.25);
 
-      h1 {
-        font-size: 30px;
-      }
+  transition: 0.3s;
+}
 
-      .card {
-        padding: 28px 21px;
-      }
+.open-btn:hover {
+  transform: translateY(-3px);
+}
 
-      .message {
-        font-size: 14px;
-      }
 
-      .highlight {
-        font-size: 25px;
-      }
-    }
-  </style>
+/* =====================
+   MAIN
+===================== */
+
+#main {
+  display: none;
+
+  opacity: 0;
+
+  transition: opacity 1.2s ease;
+}
+
+#main.show {
+  opacity: 1;
+}
+
+
+/* =====================
+   HERO
+===================== */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 30px;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.date {
+  font-size: 10px;
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  color: #a85a70;
+
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+
+  font-size: clamp(42px, 8vw, 70px);
+
+  font-weight: normal;
+
+  line-height: 1.1;
+
+  color: #6d3946;
+
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: #b94d6b;
+
+  font-style: italic;
+}
+
+.hero p {
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: #765761;
+}
+
+.scroll {
+  margin-top: 45px;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  color: #a87884;
+}
+
+
+/* =====================
+   LETTER
+===================== */
+
+.section {
+  width: 90%;
+  max-width: 720px;
+
+  margin: auto;
+
+  padding: 55px 0;
+}
+
+.card {
+  background: rgba(255,255,255,0.76);
+
+  border-radius: 25px;
+
+  padding: 35px 30px;
+
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.9);
+
+  box-shadow:
+    0 20px 60px rgba(90,40,55,0.10);
+}
+
+.card h2 {
+  text-align: center;
+
+  font-family: Georgia, serif;
+
+  font-size: 42px;
+
+  font-weight: normal;
+
+  color: #713b48;
+
+  margin-bottom: 30px;
+}
+
+.message {
+  font-size: 15px;
+
+  line-height: 1.75;
+
+  color: #563b42;
+}
+
+.message p {
+  margin-bottom: 15px;
+}
+
+
+/* =====================
+   REVEAL
+===================== */
+
+.reveal {
+  text-align: center;
+
+  padding: 70px 20px;
+}
+
+.reveal small {
+  display: block;
+
+  font-family: Georgia, serif;
+
+  font-size: 20px;
+
+  font-style: italic;
+
+  color: #8e5d68;
+
+  margin-bottom: 15px;
+}
+
+.reveal h2 {
+  font-family: Georgia, serif;
+
+  font-size: clamp(42px, 8vw, 70px);
+
+  font-weight: normal;
+
+  color: #ad4662;
+
+  line-height: 1.1;
+}
+
+
+/* =====================
+   DATE BOX
+===================== */
+
+.date-box {
+  text-align: center;
+
+  padding: 30px;
+
+  border-radius: 22px;
+
+  background: rgba(255,240,245,0.82);
+
+  border: 1px solid #f1ccd7;
+}
+
+.date-box small {
+  display: block;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  color: #a85d70;
+
+  margin-bottom: 12px;
+}
+
+.date-box strong {
+  font-family: Georgia, serif;
+
+  font-size: 32px;
+
+  font-weight: normal;
+
+  color: #a33f5b;
+}
+
+
+/* =====================
+   STORY
+===================== */
+
+.story-title {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.story-title small {
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  color: #a85e72;
+}
+
+.story-title h2 {
+  font-family: Georgia, serif;
+
+  font-size: 48px;
+
+  font-weight: normal;
+
+  color: #713b48;
+
+  margin-top: 8px;
+}
+
+.story-box {
+  background: rgba(255,255,255,0.70);
+
+  border-radius: 20px;
+
+  padding: 25px;
+
+  margin-bottom: 14px;
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.9);
+}
+
+.story-box h3 {
+  font-family: Georgia, serif;
+
+  font-size: 23px;
+
+  font-weight: normal;
+
+  color: #713f4a;
+
+  margin-bottom: 8px;
+}
+
+.story-box p {
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  color: #735761;
+}
+
+
+/* =====================
+   FINAL
+===================== */
+
+.final {
+  min-height: 90vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 40px 20px;
+}
+
+.final h2 {
+  font-family: Georgia, serif;
+
+  font-size: clamp(45px, 8vw, 70px);
+
+  font-weight: normal;
+
+  color: #6c3845;
+
+  margin-bottom: 25px;
+}
+
+.final h2 span {
+  color: #b94d6b;
+
+  font-style: italic;
+}
+
+.final p {
+  font-family: Georgia, serif;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+
+  white-space: pre-line;
+
+  color: #765761;
+}
+
+.signature {
+  margin-top: 30px;
+
+  font-family: Georgia, serif;
+
+  font-size: 23px;
+
+  font-style: italic;
+
+  color: #a74763;
+}
+
+
+/* =====================
+   MUSIC
+===================== */
+
+.music-btn {
+  position: fixed;
+
+  right: 18px;
+  bottom: 18px;
+
+  width: 48px;
+  height: 48px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #b94d6b;
+
+  color: white;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  z-index: 1000;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.15);
+}
+
+
+/* =====================
+   FLOATING HEARTS
+===================== */
+
+.floating-heart {
+  position: fixed;
+
+  bottom: -30px;
+
+  color: rgba(185,77,107,0.25);
+
+  pointer-events: none;
+
+  animation: floatUp linear forwards;
+
+  z-index: 0;
+}
+
+@keyframes floatUp {
+
+  from {
+    transform:
+      translateY(0)
+      rotate(0deg);
+
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  to {
+    transform:
+      translateY(-110vh)
+      rotate(360deg);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 600px) {
+
+  .opening-title {
+    font-size: 38px;
+  }
+
+  .card {
+    padding: 28px 22px;
+  }
+
+  .message {
+    font-size: 14px;
+  }
+
+  .card h2 {
+    font-size: 35px;
+  }
+
+  .story-title h2 {
+    font-size: 40px;
+  }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-  <!-- OPENING SCREEN -->
 
-  <section id="opening" class="screen">
-    <div>
-      <div class="heart">♡</div>
+<!-- =====================
+     OPENING SCREEN
+===================== -->
 
-      <div class="opening-title">
-        a little something for you
-      </div>
+<div id="opening">
 
-      <div class="opening-subtitle">
-        please open this when you're ready, ben
-      </div>
+  <div class="opening-content">
 
-      <button class="open-btn" onclick="openLetter()">
-        open my letter
-      </button>
+    <div class="small-text">
+      a little something for you
     </div>
-  </section>
+
+    <div class="heart">
+      ♡
+    </div>
+
+    <div class="opening-title">
+      for you, Ben
+    </div>
+
+    <div class="opening-subtitle">
+      there's something I want to tell you...
+    </div>
+
+    <button
+      class="open-btn"
+      onclick="openLetter()"
+    >
+      open my letter ♡
+    </button>
+
+  </div>
+
+</div>
 
 
-  <!-- LETTER -->
+<!-- =====================
+     MAIN WEBSITE
+===================== -->
 
-  <main id="letter" class="screen">
-
-    <div class="card">
-
-      <div class="date">
-        august 29, 2026
-      </div>
-
-      <h1>for you, baby</h1>
-
-      <div class="message">
-
-        <p>
-          hi baby, good morning po! hehehe. uhm, for this message, i just want to say that i love you so muchieee. thank you for everything, baby. alam ko naman kung gaano ka-grabe yung effort and time na binibigay mo sa'kin, and i really, really appreciate all of it.
-        </p>
-
-        <p>
-          i see how much effort you put into everything, and nakikita ko talaga na you're a genuinely good guy. that's also one of the reasons why nagustuhan din talaga kita.
-        </p>
-
-        <p>
-          since hindi natuloy yung date natin today because of the heavy rainfall, siguro dito ko na lang sasabihin since i promised you na saturday ko sasabihin.
-        </p>
-
-      </div>
+<main id="main">
 
 
-      <!-- SUSPENSE -->
+<!-- HERO -->
 
-      <div class="reveal">
+<section class="hero">
 
-        <small>
-          ben, may sasabihin ako sa'yo...
-        </small>
+  <div class="hero-content">
 
-        <strong>
-          pinapatigil na kita.
-        </strong>
+    <div class="date">
+      August 29, 2026
+    </div>
 
-      </div>
+    <h1>
+      something I've been
+      <span>meaning to tell you.</span>
+    </h1>
 
+    <p>
+      Since our date didn't happen today because of
+      the heavy rainfall, siguro dito ko na lang muna
+      sasabihin yung matagal ko nang gustong sabihin.
+    </p>
 
-      <div class="message">
+    <div class="scroll">
+      scroll slowly ↓
+    </div>
 
-        <p>
-          pinapatigil na kita sa paghihintay, sa kakaisip, and sa pag-aabang kung ano ba talaga magiging sagot ko sa'yo.
-        </p>
+  </div>
 
-      </div>
-
-
-      <!-- BIG REVEAL -->
-
-      <div class="highlight">
-        kase baby...
-        <br>
-        sinasagot na kita.
-      </div>
-
-      <div class="reveal">
-
-        <small>
-          this month, this day
-        </small>
-
-        <strong>
-          August 29, 2026
-        </strong>
-
-      </div>
+</section>
 
 
-      <div class="message">
+<!-- MESSAGE -->
 
-        <p>
-          opo, sinasagot na kita, ben. promises, promises, totoo po. hehehe. wag ka magalit na dito ko sinabi pleaseee. i really wanted to tell you personally, pero since hindi natuloy yung date natin, dito ko na lang muna sinabi.
-        </p>
+<section class="section">
 
-        <p>
-          and you know what i love most about you, baby? kase honestly, ang dami e HAHAHAHAHA. pero siguro pinaka gusto ko sa'yo is how genuine you are. like, nakikita ko talaga yung effort mo sa akin without me even having to ask for it, and i really appreciate that so much.
-        </p>
+  <div class="card">
 
-        <p>
-          i love how patient you are with me kahit ang kulit ko minsan and kahit intentionally talaga kitang inaaway HAHAHAHAHAHA. gusto ko lang din kasi makita kung hanggang saan ka aabot and kung gaano ka talaga kaseryoso sa'kin.
-        </p>
+    <h2>
+      for you, baby
+    </h2>
 
-        <p>
-          i also love how you make me feel na i'm actually cared for and appreciated. yung feeling na i don't have to question if you really like me or if you're serious about me, kase you always show it naman.
-        </p>
+    <div class="message">
 
-      </div>
+      <p>
+        hi baby, good morning po! hehehe. uhm, for this message, i just want to say that i love you so muchieee. thank you for everything, baby. alam ko naman kung gaano ka-grabe yung effort and time na binibigay mo sa'kin, and i really, really appreciate all of it.
+      </p>
 
+      <p>
+        i see how much effort you put into everything, and nakikita ko talaga na you're a genuinely good guy. that's also one of the reasons why nagustuhan din talaga kita.
+      </p>
 
-      <!-- STORY -->
-
-      <div class="highlight">
-        remember?
-        <br>
-        first meet natin sa omegle.
-      </div>
-
-      <div class="message">
-
-        <p>
-          ang unexpected non sobra. like, i never really thought na may mangyayari pa after that. and honestly, wala akong "what if's" about it.
-        </p>
-
-        <p>
-          kase pi baby, i believe it was God's faith that made our paths cross. parang hindi naman siguro aksidente lang na nagkakilala tayo. out of all the people we could've met, tayo yung pinagtagpo.
-        </p>
-
-        <p>
-          so sana baby, wag natin sayangin 'yon. let's take care of what we have and make the most out of this journey natin.
-        </p>
-
-        <p>
-          i don't know exactly what's ahead of us, but i'm willing to find out with you. i hope this journey natin maging okay, maging genuine, and maging worth it for both of us.
-        </p>
-
-        <p>
-          thank you for staying patient with me, for understanding me, and for continuously showing me that you're serious about me. i appreciate you more than you know.
-        </p>
-
-      </div>
-
-
-      <!-- OPTIONAL PHOTO -->
-
-      <div class="photo-container">
-
-     
-        <img
-          src="our-photo.jpg"
-          alt="our photo"
-          onerror="this.style.display='none'"
-        >
-
-        <div class="photo-caption">
-          one of my favorite people
-        </div>
-
-      </div>
-
-
-      <!-- ENDING -->
-
-      <div class="ending">
-
-        <div class="ending-text">
-          so ayun, baby...
-        </div>
-
-        <p class="message">
-          no more waiting.
-          no more guessing.
-
-          you finally have your answer.
-
-          i love you so muchieee, ben.
-        </p>
-
-        <div class="forever">
-          here's to our little journey.
-        </div>
-
-      </div>
+      <p>
+        since hindi natuloy yung date natin today because of the heavy rainfall, siguro dito ko na lang sasabihin since i promised you na saturday ko sasabihin.
+      </p>
 
     </div>
 
-  </main>
+  </div>
+
+</section>
 
 
-  <!-- MUSIC -->
+<!-- SUSPENSE -->
 
-  <!--
-    OPTIONAL:
-    Put your music file in the same folder and name it "music.mp3".
-  -->
+<section class="section">
 
-  <audio id="music" loop>
-    <source src="music.mp3" type="audio/mpeg">
-  </audio>
+  <div class="date-box">
 
-  <button class="music-btn" onclick="toggleMusic()">
-    ♪
-  </button>
+    <small>
+      ben, may sasabihin ako sa'yo...
+    </small>
 
+    <strong>
+      pinapatigil na kita.
+    </strong>
 
-  <script>
+  </div>
 
-    function openLetter() {
+  <div
+    class="message"
+    style="margin-top:20px;"
+  >
 
-      const opening = document.getElementById("opening");
-      const letter = document.getElementById("letter");
-      const music = document.getElementById("music");
+    <p>
+      pinapatigil na kita sa paghihintay, sa kakaisip, and sa pag-aabang kung ano ba talaga magiging sagot ko sa'yo.
+    </p>
 
-      opening.style.opacity = "0";
+  </div>
 
-      setTimeout(() => {
-
-        opening.style.display = "none";
-        letter.style.display = "flex";
-
-        setTimeout(() => {
-          letter.classList.add("show");
-        }, 100);
-
-        music.play().catch(() => {});
-
-      }, 700);
-
-    }
+</section>
 
 
-    function toggleMusic() {
+<!-- BIG REVEAL -->
 
-      const music = document.getElementById("music");
+<section class="reveal">
 
-      if (music.paused) {
-        music.play();
-      } else {
-        music.pause();
-      }
+  <small>
+    kase baby...
+  </small>
 
-    }
+  <h2>
+    sinasagot na kita. ♡
+  </h2>
+
+</section>
 
 
-    /* FLOATING HEARTS */
+<!-- DATE -->
 
-    function createHeart() {
+<section class="section">
 
-      const heart = document.createElement("div");
+  <div class="date-box">
 
-      heart.className = "floating-heart";
-      heart.innerHTML = "♡";
+    <small>
+      this month, this day
+    </small>
 
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (15 + Math.random() * 25) + "px";
-      heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+    <strong>
+      August 29, 2026
+    </strong>
 
-      document.body.appendChild(heart);
+  </div>
 
-      setTimeout(() => {
-        heart.remove();
-      }, 10000);
+</section>
 
-    }
 
-    setInterval(createHeart, 900);
+<!-- LOVE MESSAGE -->
 
-  </script>
+<section class="section">
+
+  <div class="card">
+
+    <div class="message">
+
+      <p>
+        opo, sinasagot na kita, ben. promises, promises, totoo po. hehehe. wag ka magalit na dito ko sinabi pleaseee. i really wanted to tell you personally, pero since hindi natuloy yung date natin, dito ko na lang muna sinabi.
+      </p>
+
+      <p>
+        and you know what i love most about you, baby? kase honestly, ang dami e HAHAHAHAHA. pero siguro pinaka gusto ko sa'yo is how genuine you are. like, nakikita ko talaga yung effort mo sa akin without me even having to ask for it, and i really appreciate that so much.
+      </p>
+
+      <p>
+        i love how patient you are with me kahit ang kulit ko minsan and kahit intentionally talaga kitang inaaway HAHAHAHAHAHA. gusto ko lang din kasi makita kung hanggang saan ka aabot and kung gaano ka talaga kaseryoso sa'kin.
+      </p>
+
+      <p>
+        i also love how you make me feel na i'm actually cared for and appreciated. yung feeling na i don't have to question if you really like me or if you're serious about me, kase you always show it naman.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- STORY -->
+
+<section class="section">
+
+  <div class="story-title">
+
+    <small>
+      where it all started
+    </small>
+
+    <h2>
+      remember?
+    </h2>
+
+  </div>
+
+
+  <div class="story-box">
+
+    <h3>
+      first meet natin sa Omegle
+    </h3>
+
+    <p>
+      ang unexpected non sobra. like, i never really thought na may mangyayari pa after that. and honestly, wala akong "what if's" about it.
+    </p>
+
+  </div>
+
+
+  <div class="story-box">
+
+    <h3>
+      maybe it wasn't an accident
+    </h3>
+
+    <p>
+      kase pi baby, i believe it was God's plan that made our paths cross. parang hindi naman siguro aksidente lang na nagkakilala tayo. out of all the people we could've met, tayo yung pinagtagpo.
+    </p>
+
+  </div>
+
+
+  <div class="story-box">
+
+    <h3>
+      let's take care of this
+    </h3>
+
+    <p>
+      so sana baby, wag natin sayangin 'yon. let's take care of what we have and make the most out of this journey natin.
+    </p>
+
+  </div>
+
+
+  <div class="story-box">
+
+    <h3>
+      whatever comes next
+    </h3>
+
+    <p>
+      i don't know exactly what's ahead of us, but i'm willing to find out with you. i hope this journey natin maging okay, maging genuine, and maging worth it for both of us.
+    </p>
+
+  </div>
+
+
+  <div class="story-box">
+
+    <h3>
+      thank you for staying
+    </h3>
+
+    <p>
+      thank you for staying patient with me, for understanding me, and for continuously showing me that you're serious about me. i appreciate you more than you know.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+  <div>
+
+    <div class="date">
+      finally
+    </div>
+
+    <h2>
+      so ayun,
+      <span>baby...</span>
+    </h2>
+
+    <p>
+
+no more waiting.
+no more guessing.
+
+you finally have your answer.
+
+i love you so muchieee, ben.
+
+    </p>
+
+    <div class="signature">
+      here's to our little journey. ♡
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================
+     MUSIC
+===================== -->
+
+<audio id="music" loop>
+
+  <source
+    src="music.mp3"
+    type="audio/mpeg"
+  >
+
+</audio>
+
+
+<button
+  class="music-btn"
+  onclick="toggleMusic()"
+  id="musicButton"
+>
+  ♪
+</button>
+
+
+<script>
+
+/* =====================
+   OPEN LETTER
+===================== */
+
+function openLetter() {
+
+  const opening =
+    document.getElementById("opening");
+
+  const main =
+    document.getElementById("main");
+
+  const music =
+    document.getElementById("music");
+
+  opening.classList.add("hide");
+
+
+  setTimeout(function() {
+
+    opening.style.display = "none";
+
+    main.style.display = "block";
+
+    setTimeout(function() {
+
+      main.classList.add("show");
+
+    }, 50);
+
+
+    /* START MUSIC */
+
+    music.volume = 0.35;
+
+    music.play().catch(function() {
+
+      console.log(
+        "Click the music button if music does not start."
+      );
+
+    });
+
+  }, 900);
+
+}
+
+
+/* =====================
+   MUSIC
+===================== */
+
+function toggleMusic() {
+
+  const music =
+    document.getElementById("music");
+
+  const button =
+    document.getElementById("musicButton");
+
+
+  if (music.paused) {
+
+    music.play();
+
+    button.innerHTML = "Ⅱ";
+
+  } else {
+
+    music.pause();
+
+    button.innerHTML = "♪";
+
+  }
+
+}
+
+
+/* =====================
+   FLOATING HEARTS
+===================== */
+
+function createHeart() {
+
+  const heart =
+    document.createElement("div");
+
+  heart.className =
+    "floating-heart";
+
+  heart.innerHTML = "♡";
+
+  heart.style.left =
+    Math.random() * 100 + "vw";
+
+  heart.style.fontSize =
+    (14 + Math.random() * 22) + "px";
+
+  heart.style.animationDuration =
+    (6 + Math.random() * 6) + "s";
+
+  document.body.appendChild(heart);
+
+
+  setTimeout(function() {
+
+    heart.remove();
+
+  }, 13000);
+
+}
+
+
+setInterval(createHeart, 1200);
+
+</script>
 
 </body>
 </html>
+```
